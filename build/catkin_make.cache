@@ -1,0 +1,2 @@
+map_opencv:minilab_model:minilab_simulation:my_teleop:pioneer3dx/pioneer3dx_description
+-DCATKIN_DEVEL_PREFIX=/home/lilian/new_catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lilian/new_catkin_ws/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/lilian/new_catkin_ws/devel
+
+Name: map_opencv
+Description: Description of map_opencv
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
