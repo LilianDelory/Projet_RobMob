@@ -56,7 +56,6 @@ CMAKE_BINARY_DIR = /home/lilian/new_catkin_ws/build
 all: gtest/all
 all: minilab_model/all
 all: minilab_simulation/all
-all: pioneer3dx/pioneer3dx_description/all
 all: map_opencv/all
 all: my_teleop/all
 
@@ -66,7 +65,6 @@ all: my_teleop/all
 preinstall: gtest/preinstall
 preinstall: minilab_model/preinstall
 preinstall: minilab_simulation/preinstall
-preinstall: pioneer3dx/pioneer3dx_description/preinstall
 preinstall: map_opencv/preinstall
 preinstall: my_teleop/preinstall
 
@@ -81,7 +79,6 @@ clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
 clean: minilab_model/clean
 clean: minilab_simulation/clean
-clean: pioneer3dx/pioneer3dx_description/clean
 clean: map_opencv/clean
 clean: my_teleop/clean
 
@@ -249,24 +246,6 @@ my_teleop/preinstall:
 my_teleop/clean:
 
 .PHONY : my_teleop/clean
-
-#=============================================================================
-# Directory level rules for directory pioneer3dx/pioneer3dx_description
-
-# Recursive "all" directory target.
-pioneer3dx/pioneer3dx_description/all:
-
-.PHONY : pioneer3dx/pioneer3dx_description/all
-
-# Recursive "preinstall" directory target.
-pioneer3dx/pioneer3dx_description/preinstall:
-
-.PHONY : pioneer3dx/pioneer3dx_description/preinstall
-
-# Recursive "clean" directory target.
-pioneer3dx/pioneer3dx_description/clean:
-
-.PHONY : pioneer3dx/pioneer3dx_description/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir

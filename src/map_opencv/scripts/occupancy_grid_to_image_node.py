@@ -12,6 +12,11 @@ def occupancy_grid_callback(data):
     height = data.info.height
     data_array = np.array(data.data, dtype=np.int8)
 
+    resolution = data.info.resolution
+    origin = data.info.origin
+    print("Resolution : ", resolution)
+    print("Origin :", origin )
+
     # Reshape data to 2D array
     occupancy_grid = np.reshape(data_array, (height, width))
 

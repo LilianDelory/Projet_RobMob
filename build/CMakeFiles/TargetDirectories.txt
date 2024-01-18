@@ -50,13 +50,6 @@
 /home/lilian/new_catkin_ws/build/minilab_simulation/CMakeFiles/rebuild_cache.dir
 /home/lilian/new_catkin_ws/build/minilab_simulation/CMakeFiles/edit_cache.dir
 /home/lilian/new_catkin_ws/build/minilab_simulation/CMakeFiles/test.dir
-/home/lilian/new_catkin_ws/build/pioneer3dx/pioneer3dx_description/CMakeFiles/install/strip.dir
-/home/lilian/new_catkin_ws/build/pioneer3dx/pioneer3dx_description/CMakeFiles/install/local.dir
-/home/lilian/new_catkin_ws/build/pioneer3dx/pioneer3dx_description/CMakeFiles/install.dir
-/home/lilian/new_catkin_ws/build/pioneer3dx/pioneer3dx_description/CMakeFiles/list_install_components.dir
-/home/lilian/new_catkin_ws/build/pioneer3dx/pioneer3dx_description/CMakeFiles/rebuild_cache.dir
-/home/lilian/new_catkin_ws/build/pioneer3dx/pioneer3dx_description/CMakeFiles/edit_cache.dir
-/home/lilian/new_catkin_ws/build/pioneer3dx/pioneer3dx_description/CMakeFiles/test.dir
 /home/lilian/new_catkin_ws/build/map_opencv/CMakeFiles/install/strip.dir
 /home/lilian/new_catkin_ws/build/map_opencv/CMakeFiles/install.dir
 /home/lilian/new_catkin_ws/build/map_opencv/CMakeFiles/list_install_components.dir

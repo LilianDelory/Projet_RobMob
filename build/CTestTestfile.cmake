@@ -7,6 +7,5 @@
 subdirs("gtest")
 subdirs("minilab_model")
 subdirs("minilab_simulation")
-subdirs("pioneer3dx/pioneer3dx_description")
 subdirs("map_opencv")
 subdirs("my_teleop")

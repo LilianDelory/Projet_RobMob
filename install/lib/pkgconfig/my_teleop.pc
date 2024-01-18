@@ -1,0 +1,8 @@
+prefix=/home/lilian/new_catkin_ws/install
+
+Name: my_teleop
+Description: Description of my_teleop
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

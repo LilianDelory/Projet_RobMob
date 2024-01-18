@@ -133,7 +133,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/lilian/new_catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/lilian/new_catkin_ws/build/minilab_model/cmake_install.cmake")
   include("/home/lilian/new_catkin_ws/build/minilab_simulation/cmake_install.cmake")
-  include("/home/lilian/new_catkin_ws/build/pioneer3dx/pioneer3dx_description/cmake_install.cmake")
   include("/home/lilian/new_catkin_ws/build/map_opencv/cmake_install.cmake")
   include("/home/lilian/new_catkin_ws/build/my_teleop/cmake_install.cmake")
 
