@@ -50,38 +50,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-""" import rospy
-import cv2
-from nav_msgs.msg import OccupancyGrid
-from cv_bridge import CvBridge
-
-def occupancy_grid_callback(data):
-    # Convertir la grille d'occupation en une image OpenCV
-    bridge = CvBridge()
-    cv_image = bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
-
-    # Afficher ou sauvegarder l'image selon vos besoins
-    cv2.imshow("Occupancy Grid Image", cv_image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
-    # Pour sauvegarder l'image
-    cv2.imwrite("occupancy_grid_image.png", cv_image)
-
-def main():
-    rospy.init_node('occupancy_grid_to_image_node', anonymous=True)
-
-    # S'abonner au topic de la grille d'occupation
-    rospy.Subscriber("/map", OccupancyGrid, occupancy_grid_callback)
-
-    # Attendre que le noeud ROS soit termine
-    rospy.spin()
-
-if __name__ == '__main__':
-    main()
- """

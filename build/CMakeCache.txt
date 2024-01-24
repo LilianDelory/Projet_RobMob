@@ -510,6 +510,12 @@ my_teleop_SOURCE_DIR:STATIC=/home/lilian/new_catkin_ws/src/my_teleop
 nav_msgs_DIR:PATH=/opt/ros/noetic/share/nav_msgs/cmake
 
 //Value Computed by CMake
+parcours_BINARY_DIR:STATIC=/home/lilian/new_catkin_ws/build/parcours
+
+//Value Computed by CMake
+parcours_SOURCE_DIR:STATIC=/home/lilian/new_catkin_ws/src/parcours
+
+//Value Computed by CMake
 pioneer3dx_description_BINARY_DIR:STATIC=/home/lilian/new_catkin_ws/build/pioneer3dx/pioneer3dx_description
 
 //Value Computed by CMake
@@ -693,7 +699,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

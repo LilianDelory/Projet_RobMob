@@ -1,2 +1,2 @@
-map_opencv:minilab_model:minilab_simulation:my_teleop
+map_opencv:minilab_model:minilab_simulation:my_teleop:parcours
 -DCATKIN_DEVEL_PREFIX=/home/lilian/new_catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lilian/new_catkin_ws/install -G Unix Makefiles

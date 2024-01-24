@@ -7,5 +7,6 @@
 subdirs("gtest")
 subdirs("minilab_model")
 subdirs("minilab_simulation")
+subdirs("parcours")
 subdirs("map_opencv")
 subdirs("my_teleop")

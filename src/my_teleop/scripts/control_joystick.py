@@ -13,8 +13,8 @@ def joy_callback(msg):
 
     # Créer un message Twist pour envoyer les commandes de mouvement
     twist_cmd = Twist()
-    twist_cmd.linear.x = linear_speed
-    twist_cmd.angular.z = angular_speed
+    twist_cmd.linear.x = linear_speed*0.3
+    twist_cmd.angular.z = angular_speed*0.3
 
     # Publier les commandes sur le topic /cmd_vel
     cmd_vel_pub.publish(twist_cmd)

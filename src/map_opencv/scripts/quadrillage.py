@@ -29,6 +29,20 @@ hauteur, largeur = image.shape
 resolution = 0.05 # m/cell
 origin = (-100.0, -100.0) # m
 
+def zone_proche_robot(zones_robot):
+
+    distance = 10000000
+    numero_case = 0
+    for zone in zones_robot:
+        x,y = zone['center']
+        if (np.sqrt((400 -x)**2 + (400 -y)**2) < distance):
+            distance = np.sqrt((400-x)**2 + (400 - y)**2)
+            numero_case = zone['numero']
+
+    return numero_case
+
+
+
 # Convertir les coordonnées de la grille d'occupation en coordonnées du monde
 def convert_center_to_world(zone):
     x = (zone['center'][0]/2 + 1800) * resolution + origin[0]
@@ -48,9 +62,10 @@ def afficher_positions_rviz(chemin):
     i = 0
 
     while not rospy.is_shutdown():
-        if marker_pub.get_num_connections() == 0:
+        if marker_pub.get_num_connections() < 2:
+            print(marker_pub.get_num_connections())
             rospy.loginfo("En attente d'abonnement de RViz...")
-            rospy.sleep(1)
+            rospy.sleep(0.01)
             continue
 
         for position in chemin:
@@ -90,67 +105,6 @@ def afficher_positions_rviz(chemin):
         break  # Sortir de la boucle après une itération """
 
 
-
-
-""" # Afficher les positions dans RViz
-def afficher_positions_rviz(chemin):
-
-    # Initialiser le nœud ROS
-    rospy.init_node("marqueur_publisher")
-    print("Initialisation du noeud...")
-
-    marker_array = MarkerArray()
-
-    # Créer un éditeur de messages Marker
-    marker_pub = rospy.Publisher("/Publication", MarkerArray, queue_size=1)
-
-     # S'abonner au topic sur lequel RViz s'abonne normalement
-    rospy.Subscriber("/Publication", MarkerArray, rviz_subscribe_callback)
-
-    # Attendre que le nœud ROS soit correctement initialisé
-    rospy.sleep(1)
-    i = 0
-    # Ajouter les points aux coordonnées spécifiées
-    for position in chemin:
-        x, y = position
-
-        # Créer un éditeur de messages Marker
-        marker = Marker()
-        marker.header.frame_id = "map"  
-        marker.type = Marker.POINTS
-        marker.action = Marker.ADD
-        marker.pose.orientation.w = 1.0
-        marker.pose.position.x = x
-        marker.pose.position.y = y
-        marker.scale.x = 1
-        marker.scale.y = 10000.2
-        marker.scale.z = 1000.2
-        marker.color.a = 1.0
-        marker.color.r = 0.0
-        marker.color.g = 1.0
-        marker.color.b = 0.0
-        marker.id = i 
-
-        marker.pose.position.z = 0.5  
-        marker_array.markers.append(marker)
-        i += 1
-
-    # Publier le marqueur une seule fois
-    # La boucle principale
-    while not rospy.is_shutdown():
-        # Attendre que RViz s'abonne
-        if not rviz_subscribed:
-            rospy.loginfo("En attente d'abonnement de RViz...")
-            rospy.sleep(1)
-            continue
-
-        # Publier le marqueur une seule fois
-        marker_pub.publish(marker_array)
-        print("Publication du marqueur...")
-        time.sleep(5)
-        # Rate de publication
-        rate = rospy.Rate(1)  # Fréquence de publication (1 Hz dans cet exemple)
-        rate.sleep() """
 
 
 # Parcourir l'image avec la fenêtre spécifiée et identifier les zones robot et obstacle
@@ -245,6 +199,8 @@ point_depart = zones_globales[point_depart-1]['numero']
 
 #point_depart = 24641
 
+point_depart = zone_proche_robot(zones_robot)
+
 
 
 
@@ -252,7 +208,7 @@ num = np.random.randint(1, len(zones_robot))
 point_arrivee = zones_robot[num]['numero']
 point_arrivee = zones_globales[point_arrivee-1]['numero']
 
-#point_arrivee = 19288
+point_arrivee = 27637
 
 
 if DEBUG_ZONE_DEPART:
@@ -297,7 +253,7 @@ cv2.circle(image_colore, zones_globales[point_arrivee-1]['center'], 5, (255, 0, 
 """ # Afficher l'image résultante
 cv2.imshow('Image segmentee', image_colore)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv2.destroyAllWindows() """
 
- """
+
 
