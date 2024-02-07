@@ -2,6 +2,7 @@
 
 import rospy
 import cv2
+import os
 from nav_msgs.msg import OccupancyGrid
 from cv_bridge import CvBridge
 import numpy as np
@@ -11,11 +12,10 @@ def occupancy_grid_callback(data):
     width = data.info.width
     height = data.info.height
     data_array = np.array(data.data, dtype=np.int8)
-
     resolution = data.info.resolution
     origin = data.info.origin
-    print("Resolution : ", resolution)
-    print("Origin :", origin )
+    print("resolution: ", resolution)
+    print("origin: ", origin)
 
     # Reshape data to 2D array
     occupancy_grid = np.reshape(data_array, (height, width))
@@ -28,7 +28,13 @@ def occupancy_grid_callback(data):
     center_y = height // 2
     half_size = 400  # Half of the desired size (800/2)
 
-    cropped_image = image[center_y - half_size:center_y + half_size, center_x - half_size:center_x + half_size]
+    #The image is cropped only if the size if > 800x800
+    if width > 800 and height > 800:
+        cropped_image = image[center_y - half_size:center_y + half_size, center_x - half_size:center_x + half_size]
+
+    else:
+        cropped_image = image
+
 
     # Display or save the cropped image as needed
     cv2.imshow("Cropped Occupancy Grid Image", cropped_image)
@@ -36,9 +42,11 @@ def occupancy_grid_callback(data):
     cv2.destroyAllWindows()
 
     # To save the cropped image
-    cv2.imwrite("cropped_occupancy_grid_image.png", cropped_image)
+    cv2.imwrite("my_occupancy_grid_image.png", cropped_image)
 
-    
+    # Save the map using map_saver
+    os.system('rosrun map_server map_saver -f my_occupancy_grid')
+
 def main():
     rospy.init_node('occupancy_grid_to_image_node', anonymous=True)
 
